@@ -1,0 +1,3 @@
+Tests: run-unit-test
+Depends: @, r-cran-testthat, r-cran-mockery, r-cran-tibble, r-cran-decor, r-cran-knitr, r-cran-brio, r-cran-progress, build-essential
+Restrictions: allow-stderr

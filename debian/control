@@ -1,0 +1,28 @@
+Source: r-cran-cpp11
+Maintainer: Debian R Packages Maintainers <r-pkg-team@alioth-lists.debian.net>
+Uploaders: Andreas Tille <tille@debian.org>,
+           Nilesh Patra <nilesh@debian.org>
+Section: gnu-r
+Testsuite: autopkgtest-pkg-r
+Priority: optional
+Build-Depends: debhelper-compat (= 13),
+               dh-r,
+               r-base-dev
+Standards-Version: 4.6.0
+Vcs-Browser: https://salsa.debian.org/r-pkg-team/r-cran-cpp11
+Vcs-Git: https://salsa.debian.org/r-pkg-team/r-cran-cpp11.git
+Homepage: https://cran.r-project.org/package=cpp11
+Rules-Requires-Root: no
+
+Package: r-cran-cpp11
+Architecture: all
+Depends: ${R:Depends},
+         ${misc:Depends}
+Recommends: ${R:Recommends}
+Suggests: ${R:Suggests}
+Description: C++11 interface for GNU R's C interface
+ Provides a header only, C++11 interface to R's C
+ interface.  Compared to other approaches 'cpp11' strives to be safe
+ against long jumps from the C API as well as C++ exceptions, conform
+ to normal R function semantics and supports interaction with 'ALTREP'
+ vectors.

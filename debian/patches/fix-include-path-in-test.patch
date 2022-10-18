@@ -1,0 +1,14 @@
+Description: Add Include-path to cpp1/include during test compilation
+Author: Nilesh Patra <nilesh@debian.org>
+Forwarded: not-needed
+Last-Update: 2021-10-17
+--- a/tests/testthat/test-source.R
++++ b/tests/testthat/test-source.R
+@@ -1,3 +1,7 @@
++cppinc <- system.file("include", package="cpp11", mustWork=TRUE)
++#Sys.setenv(PKG_CXXFLAGS = paste("-include", shQuote(cppinc)))
++Sys.setenv(PKG_CXXFLAGS = paste0(Sys.getenv("PKG_CXXFLAGS"), " -I", shQuote(cppinc)))
++
+ test_that("cpp_source works with the `code` parameter", {
+   skip_on_os("solaris")
+   dll_info <- cpp_source(
